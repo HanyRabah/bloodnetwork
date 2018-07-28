@@ -17,6 +17,7 @@
     "gulp-iconfont-css": "^2.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.0",
+    "hoek": "5.0.3",
     "jshint": "^2.9.5"
   },
   "devDependencies": {
