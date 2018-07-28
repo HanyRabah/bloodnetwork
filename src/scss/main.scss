@@ -1,0 +1,684 @@
+@import "bootstrap/bootstrap.scss";
+@import "icons.scss";
+$primary-pink: #f75171;
+
+.header-wrap {
+    border-bottom: 1px solid #eee;
+}
+.navbar-light {
+    .navbar-brand {
+        padding-left: 150px;
+        margin-right: 90px;
+
+        font-size: 22px;
+
+        color: #10c6fc;
+
+        @include media-breakpoint-down(sm) {
+            padding-left: 80px;
+        }
+
+
+        strong {
+            color: #333;
+        }
+        &:before {
+            position: absolute;
+            left: 0;
+
+            float: left;
+            width: 150px;
+            height: 150px;
+
+            content: "";
+
+            background: url(../img/logo.png) no-repeat left center;
+            background-size: 140px;
+
+            @include media-breakpoint-down(sm) {
+                top: 0;
+
+                width: 90px;
+                height: 90px;
+
+                background-size: 80px;
+            }
+        }
+    }
+    .nav-item {
+        &.active {
+            border-bottom: 1px solid $primary-pink;
+        }
+    }
+}
+.blood-slider {
+    background: url(../img/blood-cells-background.png) no-repeat right center;
+    .blood-users {
+        &-title {
+            display: block;
+            padding: 40px;
+
+            font-size: 36px;
+
+            text-align: center;
+            span {
+                font-size: 46px;
+                font-weight: bold;
+
+                text-transform: uppercase;
+            }
+        }
+        &-packs {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            &-info {
+                position: relative;
+
+                min-height: 460px;
+                padding: 50px;
+                padding-bottom: 150px;
+
+                text-align: center;
+
+                background: url(../img/blood-bag.png) no-repeat center top;
+                p {
+                    margin-bottom: 5px;
+
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+                small {
+                    color: #484848;
+                }
+                .blood-drop {
+                    position: absolute;
+                    top: 45%;
+                    right: 33px;
+
+                    width: 61px;
+                    height: 85px;
+
+                    font-size: 26px;
+                    font-weight: bold;
+                    line-height: 100px;
+
+                    transform: translateY(-50%);
+
+                    color: white;
+                    background: url(../img/blood-drop.png) no-repeat center top;
+                }
+            }
+        }
+        &-helped {
+            left: 50%;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+            margin: 0 auto;
+            list-style-type: none;
+            @for $i from 1 through 5 {
+                &.fill-#{$i} {
+                    @for $x from 1 through $i {
+                        li:nth-child(#{$x}) { 
+                            .icon {
+                                color: #f75171;
+                                fill: #f75171;
+                            }
+                        }
+                    }
+                }
+            }
+            li {
+                float: left;
+                .icon {
+                    font-size: 30px;
+                    fill: #c9c9c9;
+                    color: #c9c9c9;
+                }
+            }
+        }
+        &-extra-info {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+
+            transform: translateX(-50%);
+            text-align: center;
+            .donate-contacts {
+                width: 100px;
+                margin: 10px auto 0;
+                &-item {
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    margin-right: 20px;
+
+                    font-size: 40px;
+                    line-height: 0;
+
+                    text-align: center;
+
+                    color: white;
+                    border-radius: 40px;
+                    &-location {
+                        background-color: #f75171;
+                    }
+                    &-phone {
+                        background-color: #10c6fc;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .donate-record {
+                color: #999;
+            }
+        }
+    }
+    .load-more {
+        width: 230px;
+        padding: 15px;
+        margin: 50px auto;
+
+        font-size: 20px;
+
+        transition: all ease .3s;
+        text-align: center;
+
+        border: 1px solid #10c6fc;
+        border-radius: 45px;
+
+        a {
+            color: black;
+        }
+        &:hover {
+            background: #10c6fc;
+            a {
+                text-decoration: none;
+
+                color: white;
+            }
+        }
+    }
+}
+.activities {
+    padding: 120px 0 100px;
+
+    background: #f6f6f6;
+    h2 {
+        width: 100%;
+
+        font-size: 32px;
+        font-weight: bold;
+
+        text-align: center;
+    }
+    .activities-list {
+        width: 100%;
+        padding: 0;
+        margin: 60px 0 0;
+
+        text-align: center;
+        .activite-icon {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            margin: 0 auto 30px;
+
+            border-radius: 100px;
+            background: #f75171;
+            &-date {
+                position: absolute;
+                top: -20px;
+                right: 50px;
+
+                width: 80px;
+                height: 80px;
+                padding: 15px;
+
+                font-size: 22px;
+                line-height: 22px;
+
+                text-align: center;
+
+                color: white;
+                border-radius: 50px;
+                background: #0fc4f7;
+                small {
+                    font-size: 20px;
+                }
+            }
+            &-plus {
+                position: absolute;
+                top: -20px;
+                right: 50px;
+
+                width: 80px;
+                height: 80px;
+                padding: 15px;
+            }
+            &-blood {
+                width: 140px;
+                height: 152px;
+                margin: 15px auto;
+
+                background: url(../img/diamond.png) no-repeat center center;
+                img {
+                    margin-top: 40px;
+                }
+            }
+
+
+            h4 {
+                font-size: 22px;
+                font-weight: bold;
+
+                color: #0fcaff;
+            }
+            p {
+                color: #999;
+            }
+        }
+    }
+}
+.blood-bags {
+    padding: 30px;
+
+    text-align: center;
+    &-list {
+        list-style-type: none;
+    }
+    h5 {
+        font-size: 30px;
+        font-weight: normal;
+        span {
+            font-size: 40px;
+            font-weight: bold;
+
+            color: #10c6fc;
+        }
+    }
+    p {
+        font-size: 20px;
+
+        color: #f75171;
+    }
+    &-list {
+        padding: 0;
+        margin: 0;
+
+        list-style-type: none;
+        .col-md-3 {
+            position: relative;
+
+            height: 200px;
+            margin-bottom: 40px;
+
+            .blood {
+                &-bag {
+                    position: relative;
+                    z-index: 1;
+
+                    width: 145px;
+                    height: 200px;
+                    margin: 0 auto;
+
+                    background: url(../img/blood-bag-empty.png) no-repeat center center;
+                }
+                &-type {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    z-index: 2;
+
+                    font-size: 30px;
+                    font-weight: bold;
+
+                    transform: translateY(-50%) translateX(-50%);
+                    text-align: center;
+                }
+                &-range {
+                    position: absolute;
+                    top: 20px;
+                    left: 50%;
+                    z-index: 0;
+
+                    width: 140px;
+                    height: 160px;
+
+                    transition: background-position ease .3s;
+                    transform: translateX(-50%);
+
+                    background: url(../img/blood.png) no-repeat center 150px;
+                    &.fill-0 {
+                        background-position: center 150px;
+                    }
+                    &.fill-10 {
+                        background-position: center 120px;
+                    }
+                    &.fill-20 {
+                        background-position: center 100px;
+                    }
+                    &.fill-30 {
+                        background-position: center 90px;
+                    }
+                    &.fill-40 {
+                        background-position: center 80px;
+                    }
+                    &.fill-50 {
+                        background-position: center 60px;
+                    }
+                    &.fill-60 {
+                        background-position: center 50px;
+                    }
+                    &.fill-70 {
+                        background-position: center 40px;
+                    }
+                    &.fill-80 {
+                        background-position: center 30px;
+                    }
+                    &.fill-90 {
+                        background-position: center 10px;
+                    }
+                    &.fill-100 {
+                        background-position: center -20px;
+                    }
+                }
+                &-text {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+footer {
+    padding: 25px;
+
+    background: #222;
+    .social-icons {
+        ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            li {
+                margin-left: 10px;
+                a {
+                    .icon {
+                        font-size: 26px;
+                        color: white;
+                    }
+                    &:hover{ 
+                        .icon {
+                            color: #f75171
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copy-rights {
+        width: 100%;
+
+        font-size: 12px;
+
+        text-align: center;
+
+        color: #999;
+        p {
+            margin: 0;
+        }
+    }
+}
+.page {
+    &-header {
+        padding: 30px 15px;
+        background: #43475e;
+        h3 {
+            color: white;
+            span {
+                color: #f75171;
+            }
+        }
+    }
+    &-body {
+        .user {
+            &-card {
+                padding: 35px 20px;
+                border-radius: 10px;
+                border: 1px solid #eee;
+                text-align: center;
+                background: white;
+                margin-top: -30px;
+                position: relative;
+                .donate-record {
+                    color: #10c6fc;
+                    font-weight: bold;
+                    span {
+                        font-weight: normal;
+                        color: black;
+                    }
+                }
+                .time-to-donate {
+                    margin-top: 15px;
+                    &-header {
+                        background: #10c6fc;
+                        border-radius: 10px;
+                        color: white;
+                        span {
+                            width: 40%;
+                            text-align: center;
+                            display: inline-block;
+                        }
+                    }
+                    &-body{
+                        span {
+                            width: 40%;
+                            text-align: center;
+                            display: inline-block;
+                        }
+                    }
+                }
+                 .blood-drop {
+                    position: absolute;
+                    top: 35%;
+                    right: 33px;
+                    width: 40px;
+                    height: 65px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 70px;
+                    transform: translateY(-50%);
+                    color: white;
+                    background: url(../img/blood-drop.png) no-repeat center top;
+                    background-size: contain;
+                }
+                
+            }
+            &-name {
+                font-weight: bold;
+                font-size: 22px;
+            }
+        }
+    }
+}
+.donation-requests {
+    list-style: none;
+    padding: 25px 0;
+    margin: 0;
+    > li {
+        border-radius: 10px;
+        border: 1px solid #eee;
+        padding: 15px;
+        margin-bottom: 35px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        .donate {   
+            &-image {
+                display: inline-block;
+            }
+            &-info {
+                display: inline-block;
+                width: 60%;
+                &-name {
+                    font-size: 22px;
+                    font-weight: bold;
+                    color: #333;
+                    margin-bottom: 0px;
+                }
+                &-hearts {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0;
+                    width: 100px;
+                    .icon {
+                        font-size: 26px;
+                        color: #f75171;
+                    }
+                }
+                &-address {
+                    font-size: 14px;
+                    color: #484848;
+                }
+                &-extra {
+                    display: inline-block;
+                    text-align: right;
+                    &-date {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #000;
+                    }
+                    &-needed {
+                        font-size: 16px;
+                        color: #999;
+                    }
+                    .blood-drop {
+                        width: 60px;
+                        height: 85px;
+                        font-size: 22px;
+                        font-weight: bold;
+                        line-height: 91px;
+                        color: white;
+                        background: url(../img/blood-drop.png) no-repeat center top;
+                        background-size: contain;
+                        text-align: center;
+                        // transform: translateX(100%);
+                        margin: -30px auto 0;
+                    }
+                }
+                &-contact {
+                    position: absolute;
+                    bottom: -20px;
+                    &-location {
+                        background-color: #999;
+                        float: left;
+                        width: 40px;
+                        height: 40px;
+                        padding: 10px;
+                        margin-right: 20px;
+                        font-size: 40px;
+                        line-height: 0;
+                        text-align: center;
+                        color: white;
+                        border-radius: 40px;
+                        &.active {
+                            background-color: #4bc259;
+                        }
+                    }
+                    &-phone {
+                        background-color: #999;
+                        float: left;
+                        width: 40px;
+                        height: 40px;
+                        padding: 10px;
+                        margin-right: 20px;
+                        font-size: 40px;
+                        line-height: 0;
+                        text-align: center;
+                        color: white;
+                        border-radius: 40px;
+                        &.active {
+                            background-color: #10c6fc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.body-content {
+    padding: 15px;
+    color: #666;
+    .banner {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+}
+.campaigns {
+    &-list  {
+        list-style: none;
+        padding: 0; 
+        margin: 15px;
+        .campagin {
+            position: relative;
+            &-item {
+                position: relative;
+                padding: 80px 50px;
+                background: #333;
+                margin-bottom: 20px;
+                text-align: center;
+                border-radius: 5px;
+                &.bg {
+                    &-cairo {
+                        background: url('../img/event-cairo.png') no-repeat center center;
+                        background-size: cover;
+                    }
+                    &-alex {
+                        background: url('../img/event-alex.png') no-repeat center center;
+                        background-size: cover;
+                    }
+                    &-ismailia {
+                        background: url('../img/event-ismailia.png') no-repeat center center;
+                        background-size: cover;
+                    }
+                }
+            }
+            &-date { 
+                position: absolute;
+                top: -10px;
+                left: 30px;
+                background: white;
+                border-radius: 5px;
+                padding: 15px;
+                width: 90px;
+                border: 1px solid #999;
+                text-align: center;
+                font-size: 40px;
+                font-weight: bold;
+                color: #10c6fc;
+                span {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: normal;
+                } 
+            }
+            &-title { 
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+                color: #fff;
+            }
+            &-description {
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+}
