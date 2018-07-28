@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     jshint = require('gulp-jshint'),
@@ -38,7 +38,8 @@ gulp.task('iconfont', function(){
 });
 
 gulp.task('styles', function() {
-  return sass('src/scss/main.scss', { style: 'expanded' })
+  return gulp.src('src/scss/main.scss', { style: 'expanded' })
+  	.pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('dist/css'))
